@@ -1,0 +1,9 @@
+.php-cs-fixer.cache
+.phpunit.cache
+build
+composer.lock
+coverage
+docs
+phpunit.xml
+phpstan.neon
+vendor

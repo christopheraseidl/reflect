@@ -1,0 +1,45 @@
+{
+    "name": "christopheraseidl/reflect",
+    "description": "A simple class for facilitating quicker use of PHP's ReflectionClass.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Seidl",
+            "email": "christopheraseidl@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "pestphp/pest": "^3.5",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan-deprecation-rules": "^1.2",
+        "phpstan/phpstan-phpunit": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "christopheraseidl\\Reflect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "christopheraseidl\\Reflect\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/php-cs-fixer fix src"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}
