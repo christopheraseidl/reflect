@@ -14,7 +14,8 @@ abstract class StaticParent
     }
 }
 
-abstract class StaticTestClass extends StaticParent {
+abstract class StaticTestClass extends StaticParent
+{
     private static string $static = 'private static property';
 
     private string $instanced = 'my property';
@@ -28,16 +29,16 @@ abstract class StaticTestClass extends StaticParent {
 beforeEach(function () {
     $this->class = Reflect::on(StaticTestClass::class);
 
-    if($this->class->static !== 'private static property') {
+    if ($this->class->static !== 'private static property') {
         $this->class->static = 'private static property';
     }
 
-    if($this->class->extended !== 'extended static property') {
+    if ($this->class->extended !== 'extended static property') {
         $this->class->extended = 'extended static property';
     }
 });
 
-it('can read a static private property', function () {    
+it('can read a static private property', function () {
     expect($this->class->static)->toBe('private static property')
         ->and($this->class->extended)->toBe('extended static property');
 });
@@ -56,5 +57,5 @@ it('can call a static private method', function () {
 });
 
 it('returns an exception when accessing an instanced property on a static reflection', function () {
-    expect(fn() => $this->class->instanced)->toThrow(\Error::class);
+    expect(fn () => $this->class->instanced)->toThrow(\Error::class);
 });
